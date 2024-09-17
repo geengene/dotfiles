@@ -22,14 +22,12 @@ config = {
 	automatically_reload_config = true,
 	color_scheme = "Tokyo Night Moon",
 	default_prog = { "C:/Program Files/Git/bin/bash.exe", "-l" },
-	default_domain = "WSL:Ubuntu",
 	font = wezterm.font("JetBrainsMono Nerd Font"), --, { weight = "Bold" }
 	window_decorations = "RESIZE",
 	use_fancy_tab_bar = false,
 	tab_bar_at_bottom = true,
 	window_background_opacity = 0.9,
 	hide_tab_bar_if_only_one_tab = false,
-	tab_and_split_indices_are_zero_based = true,
 	window_close_confirmation = "NeverPrompt",
 }
 
@@ -175,6 +173,8 @@ config.key_tables = {
 		{ key = "k", action = act.ScrollByLine(-2) },
 		{ key = "DownArrow", action = act.ScrollByLine(2) },
 		{ key = "j", action = act.ScrollByLine(2) },
+		{ key = "u", action = act.ScrollByPage(-1) },
+		{ key = "d", action = act.ScrollByPage(1) },
 
 		{ key = "q", action = "PopKeyTable" },
 	},
