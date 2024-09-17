@@ -83,8 +83,16 @@ map zp <Cmd>call VSCodeNotify('editor.gotoParentFold')<CR>
 map zj <Cmd>call VSCodeNotify('editor.gotoNextFold')<CR>
 map zk <Cmd>call VSCodeNotify('editor.gotoPreviousFold')<CR>
 
-map j gj
-map k gk
+nmap j gj
+nmap k gk
+vmap j gj
+vmap k gk
+nmap L g$
+nmap H g^
+vmap L g$
+vmap H g^
+
+vmap q <Esc>
 
 " Simulate same TAB behavior in VSCode
 nmap <Tab> :Tabnext<CR>

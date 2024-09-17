@@ -1077,12 +1077,8 @@
   },
   "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.letterSpacing": 1.2,
-  "editor.fontLigatures": true,
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
   "security.workspace.trust.untrustedFiles": "open",
-  "markdown-preview-enhanced.codeBlockTheme": "github-dark.css",
-  "markdown-preview-enhanced.previewTheme": "github-dark.css",
-  "markdown-preview-enhanced.enablePreviewZenMode": false,
   "workbench.editor.highlightModifiedTabs": true,
   "editor.fontSize": 15,
   "editor.minimap.enabled": false,
@@ -1090,5 +1086,7 @@
   "gitlens.currentLine.enabled": false,
   "editor.lineNumbers": "relative",
   "git.autofetch": true,
-  "editor.formatOnPaste": true
+  "editor.formatOnPaste": true,
+  "git.openRepositoryInParentFolders": "never",
+  "editor.fontLigatures": true
 }

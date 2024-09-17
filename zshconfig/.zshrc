@@ -71,27 +71,17 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git web-search vi-mode z zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git web-search vi-mode zoxide zsh-autosuggestions zsh-syntax-highlighting)
 
-# Use lf to switch directories
-# lfcd () {
-#     tmp="$(mktemp)"
-#     lf -last-dir-path="$tmp" "$@"
-#     if [ -f "$tmp" ]; then
-#         dir="$(cat "$tmp")"
-#         [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-#     fi
-# }
-lfcd () {
-    # `command` is needed in case `lfcd` is aliased to `lf`
-    cd "$(command lf -print-last-dir "$@")"
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
 }
-# bindkey -s '^o' 'lfcd\n'  # zsh
 
-ZSH_WEB_SEARCH_ENGINES=(
-    movie "https://ww2.lookmovie.la/searching/v2?s="
-    anime "https://4anime.gg/search?keyword="
-)
 
 HISTSIZE=1000
 SAVEHIST=1000
@@ -111,11 +101,11 @@ RPROMPT="\$(vi_mode_prompt_info)$RPROMPT"
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
@@ -131,3 +121,5 @@ RPROMPT="\$(vi_mode_prompt_info)$RPROMPT"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+eval "$(zoxide init zsh)"
