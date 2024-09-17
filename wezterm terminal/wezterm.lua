@@ -28,11 +28,13 @@ config = {
 	tab_bar_at_bottom = true,
 	window_background_opacity = 0.9,
 	hide_tab_bar_if_only_one_tab = false,
+	tab_and_split_indices_are_zero_based = true,
 	window_close_confirmation = "NeverPrompt",
 }
 
 config.leader = { key = "a", mods = "ALT" }
 config.keys = {
+	-- New Tabs with different Domains
 	{
 		key = "t",
 		mods = "CTRL|SHIFT",
@@ -45,6 +47,8 @@ config.keys = {
 			DomainName = "WSL:Ubuntu",
 		}),
 	},
+
+	-- Closing Panes and tabs
 	{
 		key = "w",
 		mods = "CTRL|SHIFT",
@@ -55,23 +59,37 @@ config.keys = {
 		mods = "CTRL",
 		action = wezterm.action.CloseCurrentPane({ confirm = false }),
 	},
+
+	-- Splitting panes with wsl and default zsh domain
 	{
 		key = "v",
 		mods = "CTRL|SHIFT",
-		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+		action = wezterm.action.SplitHorizontal({ domain = "DefaultDomain" }),
+	},
+	{
+		key = "v",
+		mods = "SHIFT|ALT",
+		action = act.SplitHorizontal({ domain = { DomainName = "WSL:Ubuntu" } }),
 	},
 	{
 		key = "h",
 		mods = "CTRL|SHIFT",
-		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+		action = wezterm.action.SplitVertical({ domain = "DefaultDomain" }),
 	},
+	{
+		key = "h",
+		mods = "ALT|SHIFT",
+		action = act.SplitVertical({ domain = { DomainName = "WSL:Ubuntu" } }),
+	},
+
+	-- Navigating Tabs
 	{
 		key = "n",
 		mods = "LEADER",
 		action = act.ShowTabNavigator,
 	},
-	-- LEADER, followed by 'r' will put us in resize-pane
-	-- mode until we cancel that mode.
+
+	-- Resizing Panes
 	{
 		key = "r",
 		mods = "LEADER",
@@ -81,17 +99,7 @@ config.keys = {
 		}),
 	},
 
-	-- LEADER, followed by 'a' will put us in activate-pane
-	-- mode until we press some other key or until 1 second (1000ms)
-	-- of time elapses
-	-- {
-	-- 	key = "a",
-	-- 	mods = "LEADER",
-	-- 	action = act.ActivateKeyTable({
-	-- 		name = "activate_pane",
-	-- 		timeout_milliseconds = 1000,
-	-- 	}),
-	-- },
+	--Navigating between panes
 	{
 		key = "h",
 		mods = "LEADER",
@@ -112,11 +120,15 @@ config.keys = {
 		mods = "LEADER",
 		action = act.ActivatePaneDirection("Up"),
 	},
+
+	-- Toggle full size panes
 	{
 		key = "f",
 		mods = "LEADER",
 		action = act.TogglePaneZoomState,
 	},
+
+	-- Scrolling terminal
 	{
 		key = "s",
 		mods = "LEADER",
@@ -150,23 +162,6 @@ config.key_tables = {
 		-- Cancel the mode by pressing q
 		{ key = "q", action = "PopKeyTable" },
 	},
-
-	-- Defines the keys that are active in our activate-pane mode.
-	-- 'activate_pane' here corresponds to the name="activate_pane" in
-	-- the key assignments above.
-	-- activate_pane = {
-	-- 	{ key = "LeftArrow", action = act.ActivatePaneDirection("Left") },
-	-- 	{ key = "h", action = act.ActivatePaneDirection("Left") },
-	--
-	-- 	{ key = "RightArrow", action = act.ActivatePaneDirection("Right") },
-	-- 	{ key = "l", action = act.ActivatePaneDirection("Right") },
-	--
-	-- 	{ key = "UpArrow", action = act.ActivatePaneDirection("Up") },
-	-- 	{ key = "k", action = act.ActivatePaneDirection("Up") },
-	--
-	-- 	{ key = "DownArrow", action = act.ActivatePaneDirection("Down") },
-	-- 	{ key = "j", action = act.ActivatePaneDirection("Down") },
-	-- },
 
 	activate_scroll = {
 		{ key = "UpArrow", action = act.ScrollByLine(-2) },
