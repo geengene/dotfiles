@@ -38,7 +38,7 @@ config.keys = {
 	{
 		key = "t",
 		mods = "CTRL|SHIFT",
-		action = act.SpawnTab("CurrentPaneDomain"),
+		action = act.SpawnTab("DefaultDomain"),
 	},
 	{
 		key = "t",
