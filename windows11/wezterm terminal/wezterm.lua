@@ -8,6 +8,36 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+-- map from the domain name to the color scheme
+local DOMAIN_TO_SCHEME = {
+	-- the built-in local domain is called `local`
+	["local"] = "Tokyo Night Moon",
+	-- add other entries here to match the names of your various domains
+	["WSL:Ubuntu"] = "Everforest Dark (Gogh)",
+}
+
+local DOMAIN_TO_IMAGE = {
+	["local"] = "C:/Users/Gene/.config/wezterm/background/spiderverse.jpg",
+	["WSL:Ubuntu"] = "C:/Users/Gene/.config/wezterm/background/arcane.png",
+}
+
+local DOMAIN_TO_OPACITY = {
+	["local"] = {
+		brightness = 0.2,
+	},
+	["WSL:Ubuntu"] = {
+		brightness = 0.4,
+	},
+}
+
+wezterm.on("update-status", function(window, pane)
+	local overrides = window:get_config_overrides() or {}
+	overrides.color_scheme = DOMAIN_TO_SCHEME[pane:get_domain_name()]
+	overrides.window_background_image = DOMAIN_TO_IMAGE[pane:get_domain_name()]
+	overrides.window_background_image_hsb = DOMAIN_TO_OPACITY[pane:get_domain_name()]
+	window:set_config_overrides(overrides)
+end)
+
 -- Show which key table is active in the status area
 wezterm.on("update-right-status", function(window, pane)
 	local name = window:active_key_table()
@@ -20,15 +50,22 @@ end)
 -- This is where you actually apply your config choices
 config = {
 	automatically_reload_config = true,
-	color_scheme = "Tokyo Night Moon",
+	-- color_scheme = "Tokyo Night Moon",
 	default_prog = { "C:/Program Files/Git/bin/bash.exe", "-l" },
-	font = wezterm.font("JetBrainsMono Nerd Font"), --, { weight = "Bold" }
+	font = wezterm.font("JetBrainsMono Nerd Font"), --{ weight = "Bold" }),
 	window_decorations = "RESIZE",
+	-- window_background_image = "C:/Users/Gene/.config/wezterm/background/spiderman.jpg",
+	window_background_opacity = 1,
+	-- window_background_image_hsb = {
+	-- 	brightness = 0.2,
+	-- },
+	-- text_background_opacity = 0.5,
 	use_fancy_tab_bar = false,
+	tab_max_width = 20,
 	tab_bar_at_bottom = true,
-	window_background_opacity = 0.9,
-	hide_tab_bar_if_only_one_tab = false,
-	tab_and_split_indices_are_zero_based = true,
+	hide_tab_bar_if_only_one_tab = true,
+	tab_and_split_indices_are_zero_based = false,
+	show_tab_index_in_tab_bar = true,
 	window_close_confirmation = "NeverPrompt",
 }
 
@@ -48,6 +85,18 @@ config.keys = {
 		}),
 	},
 
+	-- Ctrl c and Ctrl v
+	{
+		key = "v",
+		mods = "CTRL",
+		action = act.PasteFrom("Clipboard"),
+	},
+	{
+		key = "c",
+		mods = "CTRL",
+		action = act.CopyTo("ClipboardAndPrimarySelection"),
+	},
+
 	-- Closing Panes and tabs
 	{
 		key = "w",
@@ -60,7 +109,7 @@ config.keys = {
 		action = wezterm.action.CloseCurrentPane({ confirm = false }),
 	},
 
-	-- Splitting panes with wsl and default zsh domain
+	-- Splitting vertical panes with wsl and default zsh domain
 	{
 		key = "v",
 		mods = "CTRL|SHIFT",
@@ -87,6 +136,16 @@ config.keys = {
 		key = "n",
 		mods = "LEADER",
 		action = act.ShowTabNavigator,
+	},
+	{
+		key = "j",
+		mods = "ALT|SHIFT",
+		action = act.ActivateTabRelative(-1),
+	},
+	{
+		key = "k",
+		mods = "ALT|SHIFT",
+		action = act.ActivateTabRelative(1),
 	},
 
 	-- Resizing Panes

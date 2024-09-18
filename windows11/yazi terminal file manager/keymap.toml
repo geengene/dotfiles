@@ -2,6 +2,17 @@
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
+[[input.prepend_keymap]]
+on   = "<Esc>"
+run  = "close"
+desc = "Cancel input"
+
+
+[[manager.prepend_keymap]]
+on   = "F"
+run  = "plugin --sync max-preview"
+desc = "Maximize or restore preview"
+
 [manager]
 
 keymap = [
