@@ -96,6 +96,8 @@ zle -N zle-line-finish
 
 bindkey -v
 bindkey -M viins kj vi-cmd-mode
+bindkey -M vicmd L end-of-line
+bindkey -M vicmd H beginning-of-line
 
 # allow vv to edit the command line (standard behaviour)
 autoload -Uz edit-command-line
