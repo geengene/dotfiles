@@ -6,5 +6,7 @@ vim.keymap.set("n", "L", "g$", { noremap = true, silent = false })
 vim.keymap.set("n", "H", "g^", { noremap = true, silent = false })
 vim.keymap.set("v", "L", "g$", { noremap = true, silent = false })
 vim.keymap.set("v", "H", "g^", { noremap = true, silent = false })
+vim.keymap.set("o", "H", "^", { noremap = true, silent = false })
+vim.keymap.set("o", "L", "$", { noremap = true, silent = false })
 
 vim.keymap.set("v", "q", "<ESC>", { noremap = true, silent = true })
