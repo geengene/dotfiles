@@ -122,5 +122,9 @@ RPROMPT="\$(vi_mode_prompt_info)$RPROMPT"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias gaa="git add -A"
+alias gcam="git commit -a -m"
+alias gp="git push"
+alias nv=nvim
 
 eval "$(zoxide init zsh)"
