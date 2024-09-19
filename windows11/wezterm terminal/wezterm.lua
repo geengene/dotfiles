@@ -51,7 +51,7 @@ end)
 config = {
 	automatically_reload_config = true,
 	-- color_scheme = "Tokyo Night Moon",
-	default_prog = { "C:/Program Files/Git/bin/bash.exe", "-l" },
+	default_prog = { "C:/Program Files/Git/usr/bin/zsh.exe", "-l" },
 	font = wezterm.font("JetBrainsMono Nerd Font"), --{ weight = "Bold" }),
 	window_decorations = "RESIZE",
 	-- window_background_image = "C:/Users/Gene/.config/wezterm/background/spiderman.jpg",
@@ -63,7 +63,7 @@ config = {
 	use_fancy_tab_bar = false,
 	tab_max_width = 20,
 	tab_bar_at_bottom = true,
-	hide_tab_bar_if_only_one_tab = true,
+	hide_tab_bar_if_only_one_tab = false,
 	tab_and_split_indices_are_zero_based = false,
 	show_tab_index_in_tab_bar = true,
 	window_close_confirmation = "NeverPrompt",
