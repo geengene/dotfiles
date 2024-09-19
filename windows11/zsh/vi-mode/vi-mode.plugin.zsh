@@ -98,9 +98,9 @@ bindkey -v
 bindkey -M viins kj vi-cmd-mode
 
 # allow vv to edit the command line (standard behaviour)
-# autoload -Uz edit-command-line
-# zle -N edit-command-line
-# bindkey -M vicmd 'vv' edit-command-line
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd 'vv' edit-command-line
 
 # allow ctrl-p, ctrl-n for navigate history (standard behaviour)
 bindkey '^P' up-history
