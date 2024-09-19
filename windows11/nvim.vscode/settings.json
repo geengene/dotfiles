@@ -1070,6 +1070,10 @@
       "env": {
         "CHERE_INVOKING": "1"
       }
+    },
+    "Zsh": {
+      "path": "C:/Program Files\\Git\\usr\\bin\\zsh.exe",
+      "args": ["-l"]
     }
   },
   "[java]": {
@@ -1088,5 +1092,6 @@
   "git.autofetch": true,
   "editor.formatOnPaste": true,
   "git.openRepositoryInParentFolders": "never",
-  "editor.fontLigatures": true
+  "editor.fontLigatures": true,
+  "python.defaultInterpreterPath": "C:\\Users\\Gene\\AppData\\Local\\Programs\\Python\\Python312\\python.exe"
 }
