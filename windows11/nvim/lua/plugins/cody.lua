@@ -1,4 +1,3 @@
-
 return {
   {
     "sourcegraph/sg.nvim",
