@@ -125,6 +125,7 @@ RPROMPT="\$(vi_mode_prompt_info)$RPROMPT"
 alias gaa="git add -A"
 alias gcam="git commit -a -m"
 alias gp="git push"
+alias gs="git status"
 alias nv=nvim
 
 eval "$(zoxide init zsh)"

@@ -4,7 +4,6 @@
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -123,6 +122,7 @@ RPROMPT="\$(vi_mode_prompt_info)$RPROMPT"
 alias gaa="git add -A"
 alias gcam="git commit -a -m"
 alias gp="git push"
+alias gs="git status"
 alias nv=nvim
 
 eval "$(zoxide init zsh)"
