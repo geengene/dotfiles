@@ -1,0 +1,90 @@
+{
+  "confirmDeletion": false,
+  "showAddCommand": false,
+  "debug": false,
+  "editorMenu": [],
+  "fileMenu": [],
+  "leftRibbon": [],
+  "rightRibbon": [],
+  "titleBar": [],
+  "statusBar": [],
+  "pageHeader": [
+    {
+      "id": "highlightr-plugin:Red",
+      "icon": "highlightr-pen-red",
+      "name": "Highlightr: Red",
+      "mode": "desktop"
+    },
+    {
+      "id": "highlightr-plugin:Pink",
+      "icon": "highlightr-pen-pink",
+      "name": "Highlightr: Pink",
+      "mode": "desktop"
+    },
+    {
+      "id": "highlightr-plugin:Cyan",
+      "icon": "highlightr-pen-cyan",
+      "name": "Highlightr: Cyan",
+      "mode": "desktop"
+    },
+    {
+      "id": "highlightr-plugin:Blue",
+      "icon": "highlightr-pen-blue",
+      "name": "Highlightr: Blue",
+      "mode": "desktop"
+    },
+    {
+      "id": "highlightr-plugin:Grey",
+      "icon": "highlightr-pen-grey",
+      "name": "Highlightr: Grey",
+      "mode": "desktop"
+    },
+    {
+      "id": "highlightr-plugin:Green",
+      "icon": "highlightr-pen-green",
+      "name": "Highlightr: Green",
+      "mode": "desktop"
+    },
+    {
+      "id": "highlightr-plugin:Orange",
+      "icon": "highlightr-pen-orange",
+      "name": "Highlightr: Orange",
+      "mode": "any"
+    },
+    {
+      "id": "highlightr-plugin:Yellow",
+      "icon": "highlightr-pen-yellow",
+      "name": "Highlightr: Yellow",
+      "mode": "any"
+    },
+    {
+      "id": "highlightr-plugin:Purple",
+      "icon": "highlightr-pen-purple",
+      "name": "Highlightr: Purple",
+      "mode": "any"
+    },
+    {
+      "id": "highlightr-plugin:unhighlight",
+      "icon": "highlightr-eraser",
+      "name": "Highlightr: Remove highlight",
+      "mode": "any"
+    }
+  ],
+  "macros": [],
+  "explorer": [],
+  "hide": {
+    "statusbar": [],
+    "leftRibbon": []
+  },
+  "spacing": 8,
+  "advancedToolbar": {
+    "rowHeight": 48,
+    "rowCount": 1,
+    "spacing": 0,
+    "buttonWidth": 48,
+    "columnLayout": false,
+    "mappedIcons": [],
+    "tooltips": false,
+    "heightOffset": 0
+  }
+}

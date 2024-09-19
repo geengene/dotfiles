@@ -1,0 +1,9 @@
+{
+  "vimMode": true,
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "./attachments",
+  "showLineNumber": false,
+  "showRibbon": false,
+  "trashOption": "local",
+  "newFileLocation": "current"
+}

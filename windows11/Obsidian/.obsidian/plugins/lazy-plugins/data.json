@@ -1,0 +1,130 @@
+{
+  "dualConfigs": true,
+  "showConsoleLog": false,
+  "desktop": {
+    "shortDelaySeconds": 5,
+    "longDelaySeconds": 10,
+    "delayBetweenPlugins": 40,
+    "defaultStartupType": null,
+    "showDescriptions": true,
+    "plugins": {
+      "table-editor-obsidian": {
+        "startupType": "short"
+      },
+      "obsidian-annotator": {
+        "startupType": "short"
+      },
+      "obsidian-auto-link-title": {
+        "startupType": "short"
+      },
+      "cmdr": {
+        "startupType": "instant"
+      },
+      "dataview": {
+        "startupType": "short"
+      },
+      "obsidian-excalidraw-plugin": {
+        "startupType": "short"
+      },
+      "folder-notes": {
+        "startupType": "instant"
+      },
+      "obsidian-git": {
+        "startupType": "instant"
+      },
+      "highlightr-plugin": {
+        "startupType": "instant"
+      },
+      "obsidian-icon-folder": {
+        "startupType": "instant"
+      },
+      "image-converter": {
+        "startupType": "short"
+      },
+      "obsidian-importer": {
+        "startupType": "long"
+      },
+      "obsidian-minimal-settings": {
+        "startupType": "instant"
+      },
+      "omnisearch": {
+        "startupType": "instant"
+      },
+      "syncthing-integration": {
+        "startupType": "instant"
+      },
+      "tag-wrangler": {
+        "startupType": "short"
+      },
+      "text-extractor": {
+        "startupType": "short"
+      },
+      "obsidian-vimrc-support": {
+        "startupType": "instant"
+      }
+    }
+  },
+  "mobile": {
+    "shortDelaySeconds": 5,
+    "longDelaySeconds": 10,
+    "delayBetweenPlugins": 40,
+    "defaultStartupType": null,
+    "showDescriptions": true,
+    "plugins": {
+      "table-editor-obsidian": {
+        "startupType": "short"
+      },
+      "obsidian-annotator": {
+        "startupType": "short"
+      },
+      "obsidian-auto-link-title": {
+        "startupType": "short"
+      },
+      "cmdr": {
+        "startupType": "short"
+      },
+      "dataview": {
+        "startupType": "short"
+      },
+      "obsidian-excalidraw-plugin": {
+        "startupType": "short"
+      },
+      "folder-notes": {
+        "startupType": "instant"
+      },
+      "obsidian-git": {
+        "startupType": "long"
+      },
+      "highlightr-plugin": {
+        "startupType": "instant"
+      },
+      "obsidian-icon-folder": {
+        "startupType": "instant"
+      },
+      "image-converter": {
+        "startupType": "short"
+      },
+      "obsidian-importer": {
+        "startupType": "short"
+      },
+      "obsidian-minimal-settings": {
+        "startupType": "instant"
+      },
+      "omnisearch": {
+        "startupType": "short"
+      },
+      "syncthing-integration": {
+        "startupType": "short"
+      },
+      "tag-wrangler": {
+        "startupType": "short"
+      },
+      "text-extractor": {
+        "startupType": "short"
+      },
+      "obsidian-vimrc-support": {
+        "startupType": "long"
+      }
+    }
+  }
+}
