@@ -104,7 +104,7 @@ config.keys = {
 	},
 	{
 		key = "w",
-		mods = "CTRL",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action.CloseCurrentPane({ confirm = false }),
 	},
 
