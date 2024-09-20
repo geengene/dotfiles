@@ -52,6 +52,7 @@ config = {
 	automatically_reload_config = true,
 	-- color_scheme = "Tokyo Night Moon",
 	default_prog = { "C:/Program Files/Git/usr/bin/zsh-5.9.exe", "-l" }, -- set program wezterm opens to zsh using git for windows zsh shell, in login mode
+	default_domain = "local",
 	font = wezterm.font("JetBrainsMono Nerd Font"), --{ weight = "Bold" }),
 	window_decorations = "RESIZE",
 	-- window_background_image = "C:/Users/Gene/.config/wezterm/background/spiderman.jpg",
