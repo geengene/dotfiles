@@ -26,7 +26,7 @@ local DOMAIN_TO_OPACITY = {
 		brightness = 0.2,
 	},
 	["WSL:Ubuntu"] = {
-		brightness = 0.4,
+		brightness = 0.3,
 	},
 }
 
@@ -51,7 +51,7 @@ end)
 config = {
 	automatically_reload_config = true,
 	-- color_scheme = "Tokyo Night Moon",
-	default_prog = { "C:/Program Files/Git/usr/bin/zsh-5.9.exe", "-l" }, -- set program wezterm opens to zsh using git for windows zsh shell, in login mode
+	default_prog = { "C:/Program Files/Git/usr/bin/zsh-5.9.exe", "-l" },
 	default_domain = "local",
 	font = wezterm.font("JetBrainsMono Nerd Font"), --{ weight = "Bold" }),
 	window_decorations = "RESIZE",
@@ -76,14 +76,12 @@ config.keys = {
 	{
 		key = "t",
 		mods = "CTRL|SHIFT",
-		action = act.SpawnTab("DefaultDomain"),
+		action = act.SpawnCommandInNewTab({ domain = "DefaultDomain", cwd = "C:\\Users\\Gene" }),
 	},
 	{
 		key = "t",
 		mods = "ALT|SHIFT",
-		action = act.SpawnTab({
-			DomainName = "WSL:Ubuntu",
-		}),
+		action = act.SpawnCommandInNewTab({ domain = { DomainName = "WSL:Ubuntu" } }),
 	},
 
 	-- Ctrl c and Ctrl v
@@ -114,7 +112,7 @@ config.keys = {
 	{
 		key = "v",
 		mods = "CTRL|SHIFT",
-		action = wezterm.action.SplitHorizontal({ domain = "DefaultDomain" }),
+		action = wezterm.action.SplitHorizontal({ domain = "DefaultDomain", cwd = "C:\\Users\\Gene" }),
 	},
 	{
 		key = "v",
@@ -124,7 +122,7 @@ config.keys = {
 	{
 		key = "h",
 		mods = "CTRL|SHIFT",
-		action = wezterm.action.SplitVertical({ domain = "DefaultDomain" }),
+		action = wezterm.action.SplitVertical({ domain = "DefaultDomain", cwd = "C:\\Users\\Gene" }),
 	},
 	{
 		key = "h",
