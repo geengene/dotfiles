@@ -68,6 +68,7 @@ config = {
 	tab_and_split_indices_are_zero_based = false,
 	show_tab_index_in_tab_bar = true,
 	window_close_confirmation = "NeverPrompt",
+	audible_bell = "Disabled",
 }
 
 config.leader = { key = "a", mods = "ALT" }
