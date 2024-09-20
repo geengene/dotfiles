@@ -55,7 +55,7 @@ config = {
 	default_domain = "local",
 	font = wezterm.font("JetBrainsMono Nerd Font"), --{ weight = "Bold" }),
 	window_decorations = "RESIZE",
-	-- window_background_image = "C:/Users/Gene/.config/wezterm/background/spiderman.jpg",
+	window_background_image = "C:/Users/Gene/.config/wezterm/background/spiderverse.jpg",
 	window_background_opacity = 1,
 	-- window_background_image_hsb = {
 	-- 	brightness = 0.2,
@@ -69,6 +69,10 @@ config = {
 	show_tab_index_in_tab_bar = true,
 	window_close_confirmation = "NeverPrompt",
 	audible_bell = "Disabled",
+	inactive_pane_hsb = {
+		saturation = 0.9,
+		brightness = 0.4,
+	},
 }
 
 config.leader = { key = "a", mods = "ALT" }
