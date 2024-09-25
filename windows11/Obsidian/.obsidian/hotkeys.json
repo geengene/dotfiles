@@ -17,7 +17,6 @@
     }
   ],
   "editor:insert-link": [],
-  "editor:open-search": [],
   "editor:toggle-checklist-status": [],
   "editor:focus": [
     {
@@ -119,7 +118,6 @@
     }
   ],
   "editor:delete-paragraph": [],
-  "editor:open-search-replace": [],
   "obsidian-minimal-settings:toggle-minimal-focus-mode": [
     {
       "modifiers": [
@@ -127,5 +125,6 @@
       ],
       "key": "K"
     }
-  ]
+  ],
+  "editor:open-search-replace": []
 }
