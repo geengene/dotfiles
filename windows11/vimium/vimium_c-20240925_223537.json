@@ -1,7 +1,7 @@
 {
 	"name": "Vimium C",
-	"@time": "9/24/2024, 8:03:52 PM",
-	"time": 1727179432007,
+	"@time": "9/25/2024, 10:35:37 PM",
+	"time": 1727274937808,
 	"environment": {
 		"extension": "1.99.994",
 		"platform": "win",
@@ -13,11 +13,9 @@
 	"keyMappings": [
 		"#!no-check",
 		"mapKey <a-a> <esc>",
-		"map <c-m> toggleWindow",
 		""
 	],
 	"linkHintCharacters": "sadjklewcmngh",
-	"newTabUrl": "www.google.com",
 	"userDefinedCss": [
 		"/*",
 		"vimium-snow theme",
