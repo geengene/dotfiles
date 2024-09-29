@@ -126,5 +126,13 @@
       "key": "K"
     }
   ],
-  "editor:open-search-replace": []
+  "editor:open-search-replace": [],
+  "backlink:open-backlinks": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "B"
+    }
+  ]
 }

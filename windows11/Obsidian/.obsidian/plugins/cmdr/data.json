@@ -13,37 +13,37 @@
       "id": "highlightr-plugin:Red",
       "icon": "highlightr-pen-red",
       "name": "Highlightr: Red",
-      "mode": "desktop"
+      "mode": "any"
     },
     {
       "id": "highlightr-plugin:Pink",
       "icon": "highlightr-pen-pink",
       "name": "Highlightr: Pink",
-      "mode": "desktop"
+      "mode": "any"
     },
     {
       "id": "highlightr-plugin:Cyan",
       "icon": "highlightr-pen-cyan",
       "name": "Highlightr: Cyan",
-      "mode": "desktop"
+      "mode": "any"
     },
     {
       "id": "highlightr-plugin:Blue",
       "icon": "highlightr-pen-blue",
       "name": "Highlightr: Blue",
-      "mode": "desktop"
+      "mode": "any"
     },
     {
       "id": "highlightr-plugin:Grey",
       "icon": "highlightr-pen-grey",
       "name": "Highlightr: Grey",
-      "mode": "desktop"
+      "mode": "any"
     },
     {
-      "id": "highlightr-plugin:Green",
-      "icon": "highlightr-pen-green",
-      "name": "Highlightr: Green",
-      "mode": "desktop"
+      "id": "highlightr-plugin:Red",
+      "icon": "highlightr-pen-red",
+      "name": "Highlightr: Red",
+      "mode": "any"
     },
     {
       "id": "highlightr-plugin:Orange",

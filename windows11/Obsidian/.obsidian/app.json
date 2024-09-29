@@ -2,7 +2,7 @@
   "vimMode": true,
   "alwaysUpdateLinks": true,
   "attachmentFolderPath": "./attachments",
-  "showLineNumber": false,
+  "showLineNumber": true,
   "showRibbon": false,
   "trashOption": "local",
   "newFileLocation": "current"
