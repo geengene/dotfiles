@@ -2,6 +2,21 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 local config = {}
+-- local mux = wezterm.mux
+
+-- wezterm.on("gui-startup", function(cmd)
+-- 	local tab, pane, window = mux.spawn_window(cmd or {})
+-- 	window:gui_window():maximize()
+-- end)
+-- wezterm.on("gui-attached", function(domain)
+-- 	-- maximize all displayed windows on startup
+-- 	local workspace = mux.get_active_workspace()
+-- 	for _, window in ipairs(mux.all_windows()) do
+-- 		if window:get_workspace() == workspace then
+-- 			window:gui_window():maximize()
+-- 		end
+-- 	end
+-- end)
 
 -- This will hold the configuration.
 if wezterm.config_builder then
@@ -92,12 +107,12 @@ config.keys = {
 	-- Ctrl c and Ctrl v
 	{
 		key = "v",
-		mods = "CTRL",
+		mods = "CTRL|SHIFT",
 		action = act.PasteFrom("Clipboard"),
 	},
 	{
 		key = "c",
-		mods = "CTRL",
+		mods = "CTRL|SHIFT",
 		action = act.CopyTo("ClipboardAndPrimarySelection"),
 	},
 
@@ -115,25 +130,35 @@ config.keys = {
 
 	-- Splitting vertical panes with wsl and default zsh domain
 	{
-		key = "v",
+		key = "|",
 		mods = "CTRL|SHIFT",
-		action = wezterm.action.SplitHorizontal({ domain = "DefaultDomain", cwd = "C:\\Users\\Gene" }),
+		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{
-		key = "v",
-		mods = "SHIFT|ALT",
-		action = act.SplitHorizontal({ domain = { DomainName = "WSL:Ubuntu" } }),
-	},
-	{
-		key = "h",
+		key = "_",
 		mods = "CTRL|SHIFT",
-		action = wezterm.action.SplitVertical({ domain = "DefaultDomain", cwd = "C:\\Users\\Gene" }),
+		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
-	{
-		key = "h",
-		mods = "ALT|SHIFT",
-		action = act.SplitVertical({ domain = { DomainName = "WSL:Ubuntu" } }),
-	},
+	-- {
+	-- 	key = "v",
+	-- 	mods = "CTRL|SHIFT",
+	-- 	action = wezterm.action.SplitHorizontal({ domain = "DefaultDomain", cwd = "C:\\Users\\Gene" }),
+	-- },
+	-- {
+	-- 	key = "v",
+	-- 	mods = "SHIFT|ALT",
+	-- 	action = act.SplitHorizontal({ domain = { DomainName = "WSL:Ubuntu" } }),
+	-- },
+	-- {
+	-- 	key = "h",
+	-- 	mods = "CTRL|SHIFT",
+	-- 	action = wezterm.action.SplitVertical({ domain = "DefaultDomain", cwd = "C:\\Users\\Gene" }),
+	-- },
+	-- {
+	-- 	key = "h",
+	-- 	mods = "ALT|SHIFT",
+	-- 	action = act.SplitVertical({ domain = { DomainName = "WSL:Ubuntu" } }),
+	-- },
 
 	-- Navigating Tabs
 	{
