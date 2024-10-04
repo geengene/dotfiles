@@ -54,7 +54,7 @@ local DOMAIN_TO_BACKGROUND = {
 			height = "Cover",
 			width = "Cover",
 			hsb = {
-				brightness = 0.2,
+				brightness = 0.15,
 			},
 			horizontal_align = "Center",
 			vertical_align = "Middle",
@@ -111,29 +111,16 @@ config = {
 	use_fancy_tab_bar = false,
 	tab_max_width = 20,
 	tab_bar_at_bottom = true,
-	hide_tab_bar_if_only_one_tab = false,
+	hide_tab_bar_if_only_one_tab = true,
 	tab_and_split_indices_are_zero_based = false,
 	show_tab_index_in_tab_bar = true,
 	window_close_confirmation = "NeverPrompt",
 	audible_bell = "Disabled",
 	inactive_pane_hsb = {
-		saturation = 0.9,
-		brightness = 0.4,
+		saturation = 0.8,
+		brightness = 0.3,
 	},
 }
-
--- config.background = {
--- 	{
--- 		source = {
--- 			File = "C:/Users/Gene/.config/wezterm/background/spiderverse.jpg",
--- 		},
--- 		height = 1080,
--- 		width = 1980,
---     hsb = {
---       brightness = 0.2
---     }
--- 	},
--- }
 
 config.leader = { key = "s", mods = "ALT" }
 config.keys = {
