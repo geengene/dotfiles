@@ -31,25 +31,57 @@ local DOMAIN_TO_SCHEME = {
 	["WSL:Ubuntu"] = "Everforest Dark (Gogh)",
 }
 
-local DOMAIN_TO_IMAGE = {
-	["local"] = "C:/Users/Gene/.config/wezterm/background/spiderverse.jpg",
-	["WSL:Ubuntu"] = "C:/Users/Gene/.config/wezterm/background/arcane.png",
-}
+-- local DOMAIN_TO_IMAGE = {
+-- 	["local"] = "C:/Users/Gene/.config/wezterm/background/spiderverse.jpg",
+-- 	["WSL:Ubuntu"] = "C:/Users/Gene/.config/wezterm/background/arcane.png",
+-- }
 
-local DOMAIN_TO_OPACITY = {
+-- local DOMAIN_TO_OPACITY = {
+-- 	["local"] = {
+-- 		brightness = 0.2,
+-- 	},
+-- 	["WSL:Ubuntu"] = {
+-- 		brightness = 0.3,
+-- 	},
+-- }
+
+local DOMAIN_TO_BACKGROUND = {
 	["local"] = {
-		brightness = 0.2,
+		{
+			source = {
+				File = "C:/Users/Gene/.config/wezterm/background/spiderverse.jpg",
+			},
+			height = "Cover",
+			width = "Cover",
+			hsb = {
+				brightness = 0.2,
+			},
+			horizontal_align = "Center",
+			vertical_align = "Middle",
+		},
 	},
 	["WSL:Ubuntu"] = {
-		brightness = 0.3,
+		{
+			source = {
+				File = "C:/Users/Gene/.config/wezterm/background/arcane.png",
+			},
+			height = "Cover",
+			width = "Cover",
+			hsb = {
+				brightness = 0.3,
+			},
+			horizontal_align = "Center",
+			vertical_align = "Middle",
+		},
 	},
 }
 
 wezterm.on("update-status", function(window, pane)
 	local overrides = window:get_config_overrides() or {}
 	overrides.color_scheme = DOMAIN_TO_SCHEME[pane:get_domain_name()]
-	overrides.window_background_image = DOMAIN_TO_IMAGE[pane:get_domain_name()]
-	overrides.window_background_image_hsb = DOMAIN_TO_OPACITY[pane:get_domain_name()]
+	overrides.background = DOMAIN_TO_BACKGROUND[pane:get_domain_name()]
+	-- overrides.window_background_image = DOMAIN_TO_IMAGE[pane:get_domain_name()]
+	-- overrides.window_background_image_hsb = DOMAIN_TO_OPACITY[pane:get_domain_name()]
 	window:set_config_overrides(overrides)
 end)
 
@@ -65,12 +97,12 @@ end)
 -- This is where you actually apply your config choices
 config = {
 	automatically_reload_config = true,
-	-- color_scheme = "Tokyo Night Moon",
+	-- color_schemje = "Tokyo Night Moon",
 	default_prog = { "C:/Program Files/Git/usr/bin/zsh-5.9.exe", "-l" },
 	default_domain = "local",
 	font = wezterm.font("JetBrainsMono Nerd Font"), --{ weight = "Bold" }),
 	window_decorations = "RESIZE",
-	window_background_image = "C:/Users/Gene/.config/wezterm/background/spiderverse.jpg",
+	-- window_background_image = "C:/Users/Gene/.config/wezterm/background/spiderverse.jpg",
 	window_background_opacity = 1,
 	-- window_background_image_hsb = {
 	-- 	brightness = 0.2,
@@ -90,7 +122,20 @@ config = {
 	},
 }
 
-config.leader = { key = "a", mods = "ALT" }
+-- config.background = {
+-- 	{
+-- 		source = {
+-- 			File = "C:/Users/Gene/.config/wezterm/background/spiderverse.jpg",
+-- 		},
+-- 		height = 1080,
+-- 		width = 1980,
+--     hsb = {
+--       brightness = 0.2
+--     }
+-- 	},
+-- }
+
+config.leader = { key = "s", mods = "ALT" }
 config.keys = {
 	-- New Tabs with different Domains
 	{
@@ -132,12 +177,12 @@ config.keys = {
 	{
 		key = "|",
 		mods = "CTRL|SHIFT",
-		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain", cwd = "C:\\Users\\Gene" }),
 	},
 	{
 		key = "_",
 		mods = "CTRL|SHIFT",
-		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain", cwd = "C:\\Users\\Gene" }),
 	},
 	-- {
 	-- 	key = "v",
