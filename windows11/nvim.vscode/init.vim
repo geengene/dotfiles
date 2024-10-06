@@ -83,6 +83,9 @@ map zp <Cmd>call VSCodeNotify('editor.gotoParentFold')<CR>
 map zj <Cmd>call VSCodeNotify('editor.gotoNextFold')<CR>
 map zk <Cmd>call VSCodeNotify('editor.gotoPreviousFold')<CR>
 
+nmap << <Cmd>call VSCodeNotify('workbench.action.moveEditorLeftInGroup')<CR>
+nmap >> <Cmd>call VSCodeNotify('workbench.action.moveEditorRightInGroup')<CR>
+
 nmap j gj
 nmap k gk
 vmap j gj
