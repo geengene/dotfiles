@@ -37,7 +37,7 @@ if vim.g.vscode then
   -- stylua: ignore
   keys = {
     { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-    { "S", mode = { "n" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+    { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
     { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
     { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
     { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
@@ -91,14 +91,15 @@ if vim.g.vscode then
     { silent = true }
   )
 
-  -- Commenting in VSCode
-  vim.api.nvim_set_keymap("n", "gcc", ":call VSCodeNotify('editor.action.commentLine')<CR>", { silent = true })
-  vim.api.nvim_set_keymap("v", "gc", ":call VSCodeNotify('editor.action.commentLine')<CR>", { silent = true })
+  --Commenting in VSCode
+  vim.api.nvim_set_keymap("x", "gc", "<Plug>VSCodeCommentary", { noremap = false, silent = true })
+  vim.api.nvim_set_keymap("n", "gc", "<Plug>VSCodeCommentary", { noremap = false, silent = true })
+  vim.api.nvim_set_keymap("o", "gc", "<Plug>VSCodeCommentary", { noremap = false, silent = true })
+  vim.api.nvim_set_keymap("n", "gcc", "<Plug>VSCodeCommentaryLine", { noremap = false, silent = true })
 
   -- Keybindings for whichkey and commands
-  vim.api.nvim_set_keymap("n", "<Space>", ":call VSCodeNotify('whichkey.show')<CR>", { silent = true })
+  vim.api.nvim_set_keymap("n", "<Space>", ":call VSCodeNotify('whichkey.show')<CR>", { noremap = true, silent = true })
   vim.api.nvim_set_keymap("v", "<Space>", ":lua openWhichKeyInVisualMode()<CR>", { noremap = true, silent = true })
-  vim.api.nvim_set_keymap("v", "<C-P>", ":lua openVSCodeCommandsInVisualMode()<CR>", { silent = true })
 
   -- Folding key mappings
   vim.api.nvim_set_keymap("n", "za", ":call VSCodeNotify('editor.toggleFold')<CR>", { silent = true })
@@ -109,10 +110,10 @@ if vim.g.vscode then
   vim.api.nvim_set_keymap("n", "zk", ":call VSCodeNotify('editor.gotoPreviousFold')<CR>", { silent = true })
 
   -- Smooth scrolling
-  vim.api.nvim_set_keymap("n", "j", "gj", { silent = true })
-  vim.api.nvim_set_keymap("n", "k", "gk", { silent = true })
-  vim.api.nvim_set_keymap("v", "j", "gj", { silent = true })
-  vim.api.nvim_set_keymap("v", "k", "gk", { silent = true })
+  vim.api.nvim_set_keymap("n", "j", "gj", { noremap = false, silent = true })
+  vim.api.nvim_set_keymap("n", "k", "gk", { noremap = false, silent = true })
+  vim.api.nvim_set_keymap("v", "j", "gj", { noremap = false, silent = true })
+  vim.api.nvim_set_keymap("v", "k", "gk", { noremap = false, silent = true })
   vim.api.nvim_set_keymap("n", "L", "g$", { silent = true })
   vim.api.nvim_set_keymap("n", "H", "g^", { silent = true })
   vim.api.nvim_set_keymap("v", "L", "g$", { silent = true })
@@ -124,11 +125,11 @@ if vim.g.vscode then
   vim.api.nvim_set_keymap("n", "gr", ":call VSCodeNotify('editor.action.goToReferences')<CR>", { silent = true })
 
   -- Escaping visual mode
-  vim.api.nvim_set_keymap("v", "q", "<Esc>", { silent = true })
+  vim.api.nvim_set_keymap("v", "q", "<Esc>", { noremap = true, silent = true })
 
   -- Simulate TAB behavior
-  vim.api.nvim_set_keymap("n", "<Tab>", ":Tabnext<CR>", { silent = true })
-  vim.api.nvim_set_keymap("n", "<S-Tab>", ":Tabprev<CR>", { silent = true })
+  vim.api.nvim_set_keymap("n", "<Tab>", ":Tabnext<CR>", { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("n", "<S-Tab>", ":Tabprev<CR>", { noremap = true, silent = true })
 
   -- miscellaneous
   vim.opt.clipboard = "unnamedplus"
