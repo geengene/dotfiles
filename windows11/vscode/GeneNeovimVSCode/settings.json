@@ -10,38 +10,17 @@
   "editor.indentSize": "tabSize",
   "explorer.compactFolders": true,
   "editor.linkedEditing": true,
-  "cody.commandHints.enabled": false,
-  "cody.commandCodeLenses": false,
   "python.analysis.autoImportCompletions": true,
 
   // neovim setup
   "vscode-neovim.neovimExecutablePaths.win32": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
-  "vscode-neovim.neovimInitVimPaths.win32": "C:\\Users\\Gene\\AppData\\Local\\nvim.vscode\\init.vim",
+  "vscode-neovim.neovimInitVimPaths.win32": "C:\\Users\\Gene\\AppData\\Local\\nvim\\init.lua",
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
-  // "vscode-neovim.compositeKeys": {
-  //   "kj": {
-  //     "command": "vscode-neovim.lua",
-  //     "args": ["vim.api.nvim_input('<ESC>')"]
-  //   }
-  // },
-  // "vscode-neovim.compositeKeys": {
-  //   "kj": {
-  //     "command": "vscode-neovim.escape"
-  //   }
-  // },
   "vscode-neovim.compositeKeys": {
     "kj": {
-      // Use lua to execute any logic
-      "command": "vscode-neovim.lua",
-      "args": [
-        [
-          "local code = require('vscode')",
-          "code.action('vscode-neovim.escape')",
-          "code.action('workbench.action.files.save')"
-        ]
-      ]
+      "command": "vscode-neovim.escape"
     }
   },
   // whichkey setup
@@ -256,7 +235,7 @@
     },
     {
       "key": "e",
-      "name": "Toggle Explorer",
+      "name": "Toggle Sidebar",
       "type": "command",
       "command": "workbench.action.toggleSidebarVisibility"
     },
@@ -750,8 +729,8 @@
       ]
     },
     {
-      "key": "s",
-      "name": "Search...",
+      "key": "L",
+      "name": "Look for...",
       "type": "bindings",
       "bindings": [
         {
@@ -765,6 +744,69 @@
           "name": "Text",
           "type": "command",
           "command": "workbench.action.findInFiles"
+        }
+      ]
+    },
+    {
+      "key": "s",
+      "name": "Surround <symbol>, function(f) or html tag(t)",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "a",
+          "name": "Add surround <symbol>",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "w",
+              "name": "In word <symbol>",
+              "type": "command",
+              "command": "vscode-neovim.send",
+              "args": "ysiw"
+            },
+            {
+              "key": "a",
+              "name": "Around symbol <symbol> <symbol>",
+              "type": "command",
+              "command": "vscode-neovim.send",
+              "args": "ysa"
+            },
+            {
+              "key": "c",
+              "name": "Around letter <symbol>",
+              "type": "command",
+              "command": "vscode-neovim.send",
+              "args": "ysl"
+            },
+            {
+              "key": "t",
+              "name": "Until <symbol> <symbol>",
+              "type": "command",
+              "command": "vscode-neovim.send",
+              "args": "yst"
+            },
+            {
+              "key": "l",
+              "name": "Around line <symbol>",
+              "type": "command",
+              "command": "vscode-neovim.send",
+              "args": "yss"
+            }
+          ]
+        },
+        {
+          "key": "d",
+          "name": "Delete surround <symbol>",
+          "type": "command",
+          "command": "vscode-neovim.send",
+          "args": "ds"
+        },
+        {
+          "key": "c",
+          "name": "Change surround <symbol> <symbol>",
+          "type": "command",
+          "command": "vscode-neovim.send",
+          "args": "cs"
         }
       ]
     },
@@ -906,7 +948,7 @@
           "key": "T",
           "name": "Toggle tab visibility",
           "type": "command",
-          "command": "workbench.action.toggleTabsVisibility"
+          "command": "workbench.action.toggleEditorVisibility"
         }
       ]
     },
@@ -967,7 +1009,7 @@
           "key": "M",
           "name": "Maximize editor group and hide side bar",
           "type": "command",
-          "command": "workbench.action.maximizeEditor"
+          "command": "workbench.action.maximizeEditorHideSidebar"
         },
         {
           "key": "=",
@@ -1041,8 +1083,7 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
-  "cody.autocomplete.enabled": false,
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.defaultProfile.windows": "zsh",
   "workbench.colorTheme": "One Dark Pro Darker",
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
@@ -1071,7 +1112,7 @@
         "CHERE_INVOKING": "1"
       }
     },
-    "Zsh": {
+    "zsh": {
       "path": "C:/Program Files\\Git\\usr\\bin\\zsh.exe",
       "args": ["-l"]
     }
@@ -1093,5 +1134,49 @@
   "editor.formatOnPaste": true,
   "git.openRepositoryInParentFolders": "never",
   "editor.fontLigatures": true,
-  "python.defaultInterpreterPath": "C:\\Users\\Gene\\AppData\\Local\\Programs\\Python\\Python312\\python.exe"
+  "python.defaultInterpreterPath": "C:\\Users\\Gene\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+  "cSpell.userWords": [
+    "asvetliakov",
+    "autofetch",
+    "CHERE",
+    "codeium",
+    "cpptools",
+    "donot",
+    "ebug",
+    "emojipedia",
+    "esbenp",
+    "keymap",
+    "MSYS",
+    "neovim",
+    "pagedown",
+    "pageup",
+    "pwsh",
+    "quickfix",
+    "resave",
+    "Sysnative",
+    "unstage",
+    "whichkey",
+    "windir",
+    "ysiw"
+  ],
+  "files.autoSave": "onFocusChange",
+  "terminal.integrated.tabs.enableAnimation": false,
+  "workbench.reduceMotion": "on",
+  "terminal.integrated.automationProfile.windows": {
+    "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "codeium.enableCodeLens": false,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "gitlens.codeLens.enabled": false,
+  "codeium.enableConfig": {
+    "*": true,
+    "git-commit": true
+  },
+  "codeium.enableCommandSideHintEducation": false,
+  "workbench.layoutControl.enabled": false,
+  "window.commandCenter": false,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorBlinking": "solid",
+  "files.autoSaveWhenNoErrors": true
 }

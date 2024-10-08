@@ -169,7 +169,7 @@
     "when": "neovim.mode != 'insert' && !inputFocus"
   },
   {
-    "key": "ctrl+alt+h",
+    "key": "shift+alt+k",
     "command": "workbench.action.terminal.focusPrevious",
     "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
   },
@@ -179,7 +179,7 @@
     "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
   },
   {
-    "key": "ctrl+alt+l",
+    "key": "shift+alt+j",
     "command": "workbench.action.terminal.focusNext",
     "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
   },
@@ -207,5 +207,34 @@
     "key": "ctrl+d",
     "command": "-editor.action.addSelectionToNextFindMatch",
     "when": "editorFocus"
+  },
+  {
+    "key": "alt+l",
+    "command": "codeium.openChatView",
+    "when": "true"
+  },
+  {
+    "key": "ctrl+shift+a",
+    "command": "-codeium.openChatView",
+    "when": "true"
+  },
+  {
+    "key": "ctrl+-",
+    "command": "workbench.action.decreaseViewWidth",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+=",
+    "command": "workbench.action.increaseViewWidth",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "workbench.action.zoomOut"
+  },
+  {
+    "key": "backspace",
+    "command": "whichkey.undoKey",
+    "when": "whichkeyVisible"
   }
 ]

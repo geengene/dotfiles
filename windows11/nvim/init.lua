@@ -15,13 +15,21 @@ if vim.g.vscode then
       "kylechui/nvim-surround",
       version = "*", -- Use for stability; omit to use `main` branch for the latest features
       event = "VeryLazy",
+      cond = not not vim.g.vscode,
       config = function()
         require("nvim-surround").setup({
           -- Configuration here, or leave empty to use defaults
         })
       end,
     },
+    {
+      "vscode-neovim/vscode-multi-cursor.nvim",
+      event = "VeryLazy",
+      cond = not not vim.g.vscode,
+      opts = {},
+    },
   })
+
   function _G.openWhichKeyInVisualMode()
     -- Restore the visual selection
     vim.cmd("normal! gv")
@@ -45,15 +53,6 @@ if vim.g.vscode then
       vim.fn.VSCodeNotifyRangePos("whichkey.show", start_pos[2], end_pos[2], start_pos[3], end_pos[3], 1)
     end
   end
-
-  -- VSCode specific keymaps
-  vim.api.nvim_set_keymap(
-    "v",
-    "<C-c>",
-    ':call VSCodeNotify("workbench.action.copyLinesDownAction")<CR>',
-    { silent = true }
-  )
-  vim.api.nvim_set_keymap("v", "<C-x>", ':call VSCodeNotify("workbench.action.cut")<CR>', { silent = true })
 
   -- Better navigation mappings
   vim.api.nvim_set_keymap("n", "<C-j>", ":call VSCodeNotify('workbench.action.navigateDown')<CR>", { silent = true })
@@ -84,7 +83,6 @@ if vim.g.vscode then
   -- Keybindings for whichkey and commands
   vim.api.nvim_set_keymap("n", "<Space>", ":call VSCodeNotify('whichkey.show')<CR>", { silent = true })
   vim.api.nvim_set_keymap("v", "<Space>", ":lua openWhichKeyInVisualMode()<CR>", { noremap = true, silent = true })
-  vim.api.nvim_set_keymap("v", "<C-P>", ":lua openVSCodeCommandsInVisualMode()<CR>", { silent = true })
 
   -- Folding key mappings
   vim.api.nvim_set_keymap("n", "za", ":call VSCodeNotify('editor.toggleFold')<CR>", { silent = true })
@@ -115,11 +113,11 @@ if vim.g.vscode then
   -- Simulate TAB behavior
   vim.api.nvim_set_keymap("n", "<Tab>", ":Tabnext<CR>", { silent = true })
   vim.api.nvim_set_keymap("n", "<S-Tab>", ":Tabprev<CR>", { silent = true })
+
   -- miscellaneous
   vim.opt.clipboard = "unnamedplus"
 else
   -- bootstrap lazy.nvim, LazyVim and your plugins
   require("config.lazy")
   vim.opt.shell = "zsh"
-  -- require("sg").setup({})
 end
