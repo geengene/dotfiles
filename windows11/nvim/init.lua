@@ -28,6 +28,21 @@ if vim.g.vscode then
       cond = not not vim.g.vscode,
       opts = {},
     },
+    {
+      "folke/flash.nvim",
+      event = "VeryLazy",
+      vscode = true,
+      ---@type Flash.Config
+      opts = {},
+  -- stylua: ignore
+  keys = {
+    { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+    { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+    { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+    { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+    { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+  },
+    },
   })
 
   function _G.openWhichKeyInVisualMode()
@@ -83,6 +98,7 @@ if vim.g.vscode then
   -- Keybindings for whichkey and commands
   vim.api.nvim_set_keymap("n", "<Space>", ":call VSCodeNotify('whichkey.show')<CR>", { silent = true })
   vim.api.nvim_set_keymap("v", "<Space>", ":lua openWhichKeyInVisualMode()<CR>", { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("v", "<C-P>", ":lua openVSCodeCommandsInVisualMode()<CR>", { silent = true })
 
   -- Folding key mappings
   vim.api.nvim_set_keymap("n", "za", ":call VSCodeNotify('editor.toggleFold')<CR>", { silent = true })
