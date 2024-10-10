@@ -98,8 +98,8 @@ if vim.g.vscode then
   vim.api.nvim_set_keymap("n", "gcc", "<Plug>VSCodeCommentaryLine", { noremap = false, silent = true })
 
   -- Keybindings for whichkey and commands
-  vim.api.nvim_set_keymap("n", "<Space>", ":call VSCodeNotify('whichkey.show')<CR>", { noremap = true, silent = true })
-  vim.api.nvim_set_keymap("v", "<Space>", ":lua openWhichKeyInVisualMode()<CR>", { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("n", "<Space>", ":call VSCodeNotify('whichkey.show')<CR>", { silent = true })
+  vim.api.nvim_set_keymap("v", "<Space>", ":lua openWhichKeyInVisualMode()<CR>", { silent = true })
 
   -- Folding key mappings
   vim.api.nvim_set_keymap("n", "za", ":call VSCodeNotify('editor.toggleFold')<CR>", { silent = true })
@@ -118,8 +118,8 @@ if vim.g.vscode then
   vim.api.nvim_set_keymap("n", "H", "g^", { silent = true })
   vim.api.nvim_set_keymap("v", "L", "g$", { silent = true })
   vim.api.nvim_set_keymap("v", "H", "g^", { silent = true })
-  vim.api.nvim_set_keymap("o", "L", "$", { silent = true })
-  vim.api.nvim_set_keymap("o", "H", "^", { silent = true })
+  vim.api.nvim_set_keymap("o", "L", "g$", { silent = true })
+  vim.api.nvim_set_keymap("o", "H", "g^", { silent = true })
 
   -- Go to references
   vim.api.nvim_set_keymap("n", "gr", ":call VSCodeNotify('editor.action.goToReferences')<CR>", { silent = true })

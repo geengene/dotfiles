@@ -51,10 +51,30 @@
     "when": "inQuickOpen"
   },
   {
-    "key": "tab",
-    "command": "selectNextSuggestion",
-    "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenNavigatePrevious",
+    "when": "inQuickOpen"
   },
+  {
+    "key": "ctrl+j",
+    "command": "selectNextCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  // {
+  //   "key": "tab",
+  //   "command": "selectNextSuggestion",
+  //   "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+  // },
+  // {
+  //   "key": "shift+tab",
+  //   "command": "selectPrevSuggestion",
+  //   "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+  // },
   {
     "key": "tab",
     "command": "workbench.action.quickOpenNavigateNext",
@@ -62,16 +82,6 @@
   },
   {
     "key": "shift+tab",
-    "command": "selectPrevSuggestion",
-    "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
-  },
-  {
-    "key": "shift+tab",
-    "command": "workbench.action.quickOpenNavigatePrevious",
-    "when": "inQuickOpen"
-  },
-  {
-    "key": "ctrl+k",
     "command": "workbench.action.quickOpenNavigatePrevious",
     "when": "inQuickOpen"
   },
@@ -169,6 +179,11 @@
     "when": "neovim.mode != 'insert' && !inputFocus"
   },
   {
+    "key": "backspace",
+    "command": "whichkey.undoKey",
+    "when": "whichkeyVisible"
+  },
+  {
     "key": "shift+alt+k",
     "command": "workbench.action.terminal.focusPrevious",
     "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
@@ -187,21 +202,6 @@
     "key": "ctrl+pagedown",
     "command": "-workbench.action.terminal.focusNext",
     "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
-  },
-  {
-    "key": "alt+l",
-    "command": "-cody.chat.newEditorPanel",
-    "when": "cody.activated && editorTextFocus"
-  },
-  {
-    "key": "alt+q",
-    "command": "cody.command.auto-edit",
-    "when": "cody.activated && config.cody.internal.unstable && !editorReadonly"
-  },
-  {
-    "key": "alt+tab",
-    "command": "-cody.command.auto-edit",
-    "when": "cody.activated && config.cody.internal.unstable && !editorReadonly"
   },
   {
     "key": "ctrl+d",
@@ -231,10 +231,5 @@
   {
     "key": "ctrl+shift+-",
     "command": "workbench.action.zoomOut"
-  },
-  {
-    "key": "backspace",
-    "command": "whichkey.undoKey",
-    "when": "whichkeyVisible"
   }
 ]

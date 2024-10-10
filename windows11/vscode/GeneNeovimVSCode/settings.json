@@ -1083,7 +1083,6 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
-  "terminal.integrated.defaultProfile.windows": "zsh",
   "workbench.colorTheme": "One Dark Pro Darker",
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
@@ -1113,7 +1112,7 @@
       }
     },
     "zsh": {
-      "path": "C:/Program Files\\Git\\usr\\bin\\zsh.exe",
+      "path": "C:/Program Files\\Git\\usr\\bin\\zsh-5.9.exe",
       "args": ["-l"]
     }
   },
@@ -1126,7 +1125,6 @@
   "security.workspace.trust.untrustedFiles": "open",
   "workbench.editor.highlightModifiedTabs": true,
   "editor.fontSize": 15,
-  "editor.minimap.enabled": false,
   "workbench.activityBar.location": "top",
   "gitlens.currentLine.enabled": false,
   "editor.lineNumbers": "relative",
@@ -1160,7 +1158,6 @@
     "ysiw"
   ],
   "files.autoSave": "onFocusChange",
-  "terminal.integrated.tabs.enableAnimation": false,
   "workbench.reduceMotion": "on",
   "terminal.integrated.automationProfile.windows": {
     "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
@@ -1178,5 +1175,12 @@
   "window.commandCenter": false,
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorBlinking": "solid",
-  "files.autoSaveWhenNoErrors": true
+  "files.autoSaveWhenNoErrors": true,
+  "editor.smoothScrolling": true,
+  "editor.scrollbar.verticalScrollbarSize": 12,
+  "cSpell.language": "en,en-GB,lorem,en-US",
+  "editor.minimap.enabled": false,
+  "terminal.integrated.defaultProfile.windows": "zsh",
+  "terminal.integrated.gpuAcceleration": "on",
+  "terminal.integrated.enableImages": true
 }

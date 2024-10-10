@@ -11,8 +11,8 @@ nmap H g^
 nmap L g$
 vmap H g^
 vmap L g$
-omap L $
-omap H ^
+omap L g$
+omap H g^
 
 vmap q <Esc>
 
