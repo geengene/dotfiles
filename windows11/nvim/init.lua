@@ -112,10 +112,10 @@ if vim.g.vscode then
   -- Smooth scrolling
   vim.api.nvim_set_keymap("n", "j", "gj", { noremap = false, silent = true })
   vim.api.nvim_set_keymap("n", "k", "gk", { noremap = false, silent = true })
-  vim.api.nvim_set_keymap("v", "j", "gj", { noremap = false, silent = true })
-  vim.api.nvim_set_keymap("v", "k", "gk", { noremap = false, silent = true })
+  vim.api.nvim_set_keymap("v", "j", "gj", { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("v", "k", "gk", { noremap = true, silent = true })
   vim.api.nvim_set_keymap("n", "L", "g$", { silent = true })
-  vim.api.nvim_set_keymap("n", "H", "g^", { silent = true })
+  vim.api.nvim_set_keymap("n", "H", "g0", { silent = true }) --somehow in normal mode g0 works better
   vim.api.nvim_set_keymap("v", "L", "g$", { silent = true })
   vim.api.nvim_set_keymap("v", "H", "g^", { silent = true })
   vim.api.nvim_set_keymap("o", "L", "g$", { silent = true })
