@@ -791,6 +791,13 @@
               "type": "command",
               "command": "vscode-neovim.send",
               "args": "yss"
+            },
+            {
+              "key": "i",
+              "name": "Inside <symbol>",
+              "type": "command",
+              "command": "vscode-neovim.send",
+              "args": "ysi"
             }
           ]
         },
