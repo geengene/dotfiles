@@ -1182,5 +1182,6 @@
   "editor.minimap.enabled": false,
   "terminal.integrated.defaultProfile.windows": "zsh",
   "terminal.integrated.gpuAcceleration": "on",
-  "terminal.integrated.enableImages": true
+  "terminal.integrated.enableImages": true,
+  "editor.lightbulb.enabled": "off"
 }
