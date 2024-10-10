@@ -113,7 +113,7 @@ config.keys = {
 	{
 		key = "t",
 		mods = "CTRL|SHIFT",
-		action = act.SpawnCommandInNewTab({ domain = "DefaultDomain", cwd = "C:\\Users\\Gene" }),
+		action = act.SpawnCommandInNewTab({ domain = "DefaultDomain" }),
 	},
 	{
 		key = "t",
@@ -149,12 +149,12 @@ config.keys = {
 	{
 		key = "|",
 		mods = "CTRL|SHIFT",
-		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain", cwd = "C:\\Users\\Gene" }),
+		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{
 		key = "_",
 		mods = "CTRL|SHIFT",
-		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain", cwd = "C:\\Users\\Gene" }),
+		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
 	-- {
 	-- 	key = "v",
