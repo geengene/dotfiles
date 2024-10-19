@@ -22,9 +22,12 @@ set clipboard=unnamed
 " Go back and forward
 " (make sure to remove default Obsidian shortcuts for these to work)
 exmap back obcommand app:go-back
-nmap gb :back
+nmap gb :back<CR>
 exmap forward obcommand app:go-forward
-nmap gf :forward
+nmap gf :forward<CR>
+" Go Into Link
+exmap goto_link obcommand editor:follow-link
+nmap gt :goto_link<CR>
 
 " Here's an example config that implements many of the features from vim-surround:
 exmap surround_wiki surround [[ ]]
@@ -82,9 +85,6 @@ exmap contextMenu obcommand editor:context-menu
 nmap K :contextMenu
 vmap K :contextMenu
 
-" Go Into Link
-exmap goto_link obcommand editor:follow-link
-nmap gt :goto_link
 
 " Search-replace
 exmap searchAndReplace obcommand editor:open-search-replace
