@@ -70,25 +70,25 @@ nmap zc :foldall
 
 " Tabs
 exmap tabnext obcommand workspace:next-tab
-nmap gl :tabnext
+nmap <Tab> :tabnext<CR>
 exmap tabprev obcommand workspace:previous-tab
-nmap gh :tabprev
+nmap <S-Tab> :tabprev<CR>
 
 " Split Window
 exmap split_vertical obcommand workspace:split-vertical
-nmap sv :split_vertical
+nmap sv :split_vertical<CR>
 exmap split_horizontal obcommand workspace:split-horizontal
-nmap sh :split_horizontal
+nmap sh :split_horizontal<CR>
 
 " contextMenu
 exmap contextMenu obcommand editor:context-menu
-nmap K :contextMenu
-vmap K :contextMenu
+nmap K :contextMenu<CR>
+vmap K :contextMenu<CR>
 
 
 " Search-replace
 exmap searchAndReplace obcommand editor:open-search-replace
-nmap sr :searchAndReplace
+nmap sr :searchAndReplace<CR>
 
 "
 """""""""""""""""""""""""""""""""""""""""""""""" "
